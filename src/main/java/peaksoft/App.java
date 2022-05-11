@@ -8,7 +8,15 @@ public class App {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
         HelloWorld bean =
-                (HelloWorld) applicationContext.getBean("helloworld");
+                (HelloWorld) applicationContext.getBean("hello world");
         System.out.println(bean.getMessage());
+
+        Cat cat1 = (Cat) applicationContext.getBean("cat",Cat.class);
+        System.out.println(cat1.getMessage());
+
+        Cat cat2 = (Cat) applicationContext.getBean("cat",Cat.class);
+        System.out.println(cat2.getMessage());
+
+        System.out.println("Compare these two beans: bean1 and bean2 "+ (cat1==cat2));
     }
 }
