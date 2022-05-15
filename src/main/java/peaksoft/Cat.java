@@ -12,7 +12,6 @@ public class Cat {
         return message;
     }
 
-    @Autowired
     public void setMessage(String message) {
         this.message = message;
     }
